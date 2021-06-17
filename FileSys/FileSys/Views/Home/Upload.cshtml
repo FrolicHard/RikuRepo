@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Upload";
+}
+
+<div class="jumbotron">
+    <h2>Uploader</h2>
+    <p class="lead">With this lil' app you can manage .txt, .jpg, .png, .gif and .pdf files of less than 3MB in size</p>
+    @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <ol>
+            <li class="lifile">
+                <input type="file" id="fileToUpload" name="file" />
+                <span class="field-validation-error" id="spanfile"></span>
+            </li>
+        </ol>
+        <input type="submit" id="btnSubmit" value="Upload" />
+    }
+</div>
+

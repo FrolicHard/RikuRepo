@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Download";
+}
+
+@using FileSys.Models
+@model List<FileModel>
+<div class="jumbotron">
+    <h2>Downloader</h2>
+    <p class="lead">Here you can see and download the files uploaded to this lil' app.</p>
+    <table>
+        <tr>
+            <th>File Name</th>
+            <th></th>
+        </tr>
+        @foreach (FileModel file in Model)
+        {
+            <tr>
+                <td>@file.FileName</td>
+                <td>@Html.ActionLink("Download", "DownloadFile", new { fileName = file.FileName })</td>
+            </tr>
+        }
+    </table>
+</div>
+
